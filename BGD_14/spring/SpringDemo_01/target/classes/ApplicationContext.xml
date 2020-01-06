@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--        无参构造实例化-->
+    <!--        <bean id="userDao" class="cn.itcast.dao.impl.UserdaoImpl" scope="singleton" init-method="init" destroy-method="destory"></bean>-->
+    <!--    <bean id="userDao" class="cn.itcast.dao.impl.UserdaoImpl" scope="singleton"></bean>-->
+    <!-- <bean id="userDao" class="cn.itcast.dao.impl.UserdaoImpl">
+         <property name="username" value="张三"></property>
+         <property name="age" value="23"></property>
+     </bean>-->
+
+    <!--    <bean id="userDao" class="cn.itcast.dao.impl.UserdaoImpl">-->
+    <!--        <constructor-arg name="username" value="tom"></constructor-arg>-->
+    <!--        <constructor-arg name="age" value="23"></constructor-arg>-->
+    <!--    </bean>-->
+    <!--    <bean id="userService" class="cn.itcast.service.impl.UserServiceImpl">-->
+    <!--        <property name="dao" ref="userDao"></property>-->
+    <!--    </bean>-->
+
+    <!--    <bean id="userService" class="cn.itcast.service.impl.UserServiceImpl" p:dao-ref="userDao"/>-->
+
+    <bean id="user1" class="cn.itcast.domain.User">
+        <property name="name" value="lisi"></property>
+        <property name="age" value="24"></property>
+    </bean>
+    <bean id="user2" class="cn.itcast.domain.User">
+        <property name="name" value="wangwu"></property>
+        <property name="age" value="26"></property>
+    </bean>
+
+    <bean id="userDao" class="cn.itcast.dao.impl.UserdaoImpl">
+        <property name="strlist">
+            <list>
+                <value>aaa</value>
+                <value>bbb</value>
+                <value>ccc</value>
+            </list>
+        </property>
+
+        <property name="usermap">
+            <map>
+                <entry key="java" value-ref="user1"></entry>
+                <entry key="C++" value-ref="user2"></entry>
+            </map>
+        </property>
+
+        <property name="p">
+            <props>
+                <prop key="p1">halo</prop>
+                <prop key="p2">world</prop>
+                <prop key="p3">java</prop>
+            </props>
+        </property>
+    </bean>
+    <bean id="userService" class="cn.itcast.service.impl.UserServiceImpl">
+        <constructor-arg name="dao" ref="userDao"></constructor-arg>
+    </bean>
+
+    <!--        工厂静态方法实例化-->
+    <!--        <bean id="userDao" class="cn.itcast.factory.StaticFactory" factory-method="getDao"></bean>-->
+
+    <!--        工厂实例方法实例化-->
+    <!--    <bean id="factory" class="cn.itcast.factory.DynamicFactory"></bean>-->
+    <!--    <bean id="userDao" factory-bean="factory" factory-method="getDao"></bean>-->
+
+    <import resource="goods.xml"/>
+    <import resource="user.xml"/>
+</beans>
