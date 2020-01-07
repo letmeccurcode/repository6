@@ -1,6 +1,7 @@
 package cn.itcast.aopTest;
 
 import cn.itcast.aop.Target;
+import cn.itcast.aop.TargetInterface;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 public class TestAop {
 
     @Autowired
-    private Target target;
+    private TargetInterface target;
 
     @Test
     public void m1() {
