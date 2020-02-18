@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-3.3.1.js"></script>
+
+    <script>
+        //定义数组存放所有图片的src路径
+        var arr = [
+            "../images/1.jpg",
+            "../images/2.jpg",
+            "../images/3.jpg",
+            "../images/4.jpg",
+            "../images/5.jpg",
+            "../images/6.jpg",
+            "../images/7.jpg",];
+
+        var imgpath;
+        // 定义入口函数
+        $(function () {
+
+            $("#startid").prop("disabled",false);
+            $("#stopid").prop("disabled",true);
+
+            // 给开始按钮绑定单击事件
+            $("#startid").click(function () {
+                $("#startid").prop("disabled",true);
+                $("#stopid").prop("disabled",false);
+                //定义循环定时器
+                var sid = setInterval(function () {
+                    //生成0-6之间的随机数
+                    var index = Math.floor(Math.random() * 7);//0.000..-0.9999..
+                    //根据索引获取到图片的路径
+                    imgpath = arr[index];
+                    //获取到小相框 给src赋值
+                    $("#img1id").prop("src",imgpath);
+                }, 100);
+            })
+
+            // 给结束按钮绑定单击事件
+            $("#stopid").click(function () {
+                $("#startid").prop("disabled", false);
+                $("#stopid").prop("disabled",true);
+                //清除循环定时器
+                clearInterval(sid);
+                //获取到大相框 给src赋值
+                $("#img2id").prop("src",imgpath);
+            })
+        })
+
+    </script>
+</head>
+<body>
+
+<!--
+    1 给开始按钮绑定单击事件
+        a 定义循环定时器
+        b 切换小相框的src属性
+            * 定义一个数组 存放所有图片的路径
+            * 生成随机数 抽取数组中的一张图片路径 设置给src属性
+
+    2 给结束按钮绑定单击事件
+        a 停止定时器
+        b 给大相框设置src属性
+-->
+
+<div>
+    <img src="../images/1.jpg" id="img1id" style="width: 150px;height: 100px">
+    <img src="../images/1.jpg" id="img2id" style="width: 800px;height: 500px">
+</div>
+<!--<div align="center">-->
+<!--    -->
+<!--</div>-->
+
+<input type="button" id="startid" value="开始" style="width: 150px;height: 150px;font-size: 22px">
+<input type="button" id="stopid" value="停止" style="width: 150px;height: 150px;font-size: 22px">
+</body>
+</html>

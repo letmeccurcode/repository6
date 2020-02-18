@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-3.3.1.js"></script>
+
+
+
+</head>
+<body>
+
+<span id="sid1">我是span1</span>
+<span id="sid2">我是span2</span>
+
+<input type="text" name="username" value="tom" id="nameid">
+<input type="button" class="inputclass" value="点我" id="btn1">
+
+<!--标签中的固有属性都使用prop方法来处理-->
+<a id="" type="" class=""></a>
+
+<!--自定义属性都是用atrr方法来处理-->
+<a href="" class="" xxx="delete" yyy=""></a>
+
+<div id="did">
+
+    <h1 id="hid">我是h1标题</h1>
+
+    <script>
+
+        // var namevar = document.getElementById("nameid");
+        // var result = namevar.value;
+
+        // innerHTML == html()
+        // innerTEXT = text()
+        var varl = document.getElementById("sid1").innerHTML;
+        // alert(result);
+        $(function () {
+            var value1 = $("#sid1").html();
+            var value2 = $("#sid1").html();
+            // alert(value1);
+            // alert(value2);
+
+            // var elementById = document.getElementById("btn1");
+
+            $("#btn1").click(function () {
+                // alert("按钮被点击了!");
+                //         $("#did").css("backgroundColor","red");
+                // $("span,#hid,.inputclass").css("backgroundColor","red");
+                var name = $("#nameid").val();
+                alert(name);
+            });
+        });
+    </script>
+</div>
+
+</body>
+</html>

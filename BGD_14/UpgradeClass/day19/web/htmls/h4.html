@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-3.3.1.js"></script>
+
+    <script>
+
+        $(function () {
+            // $("#btn1").prop("disabled",true);
+
+            $("#btn2").click(function () {
+                $("#btn1").prop("disabled", false);
+            })
+            $("#btn3").click(function () {
+                $("#btn1").prop("disabled", true);
+            })
+        })
+
+    </script>
+</head>
+</head>
+<body>
+
+
+<input type="button" id="btn1" value="这是一个按钮"><br>
+<input type="button" id="btn2" value="点我让按钮可控">
+<input type="button" id="btn3" value="点我让按钮不可控">
+
+</body>
+</html>

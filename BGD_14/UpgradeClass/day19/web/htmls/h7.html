@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-3.3.1.js"></script>
+
+    <script>
+        $(function () {
+            $("#bt1").click(function () {
+                /*$.ajax({
+                    url: "/web/aservlet",//请求的资源
+                    // type: "GET",
+                    type: "POST",
+                    data: {"username": "张三", "age": "234"},
+                    success: function (data) {
+                        alert("访问成功:" + data);
+                    },
+                    error: function () {
+                        alert("目标资源不存在!");
+                    },
+                    datatype: "text"
+                });*/
+
+                /*                $.get("/web/aservlet",{"username":"123"},function () {
+
+                                },"text");
+
+                                $.post("/web/aservlet",{"username":"123"},function () {
+
+                                },"text");
+                */
+            });
+        });
+
+    </script>
+</head>
+<body>
+
+<input type="button" id="bt1" value="点我">
+</body>
+</html>

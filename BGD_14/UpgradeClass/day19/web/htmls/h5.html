@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-3.3.1.js"></script>
+
+    <script>
+
+        $(function () {
+
+            $("#iid").mouseover(function () {
+                alert("我来了");
+            }).mouseout(function () {
+                alert("我走了");
+            })
+            var lis = $("li");
+            // for (var i = 0;i < lis.length;i++){
+            //     alert(lis[i].innerHTML);
+            // }
+
+            // lis.each(function (index,ele) {
+            //     // alert(this.innerHTML);
+            //     alert(index+":"+ele.innerHTML);
+            // })
+
+            // $.each(lis,function (index,ele) {
+            //     alert(this.innerHTML);
+            //     alert($(this).html());
+            //     alert(index+":"+ele.innerHTML);
+            // })
+
+            // for (li of lis){
+            //     alert($(li).html());
+            // }
+        })
+
+    </script>
+</head>
+<body>
+
+
+<input type="text" id="iid">
+<ul>
+    <li>aaa</li>
+    <li>bbb</li>
+    <li>ccc</li>
+    <li>ddd</li>
+</ul>
+
+</body>
+</html>

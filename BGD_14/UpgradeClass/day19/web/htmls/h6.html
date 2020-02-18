@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-3.3.1.js"></script>
+    <script src="../js/jquery-migrate-1.0.0.js"></script>
+
+    <script>
+        /*window.onload = function () {
+            var arr = document.getElementsByTagName("li");
+            // alert(arr);
+
+            for (var i = 0; i < arr.length; i++) {
+                alert(arr[i].innerHTML);
+            }
+        }*/
+
+        /*$(function () {
+            var arr = $("li");
+            for (var i = 0; i < arr.length; i++) {
+                alert(arr[i].innerHTML);
+            }
+        })*/
+
+        $(function () {
+            // var arr = $("li");
+
+            $("#bn").toggle(
+                function () {
+                    $("#did").css("backgroundColor", "red");
+                },
+                function () {
+                    $("#did").css("backgroundColor", "black");
+                },
+                function () {
+                    $("#did").css("backgroundColor", "blue");
+                });
+
+            /*$("#bn").on("click",function () {
+
+            });
+
+            $("#bn").off();*/
+
+            /* $("#bn").click(function () {
+                 alert("该按钮被点击了");
+             }).mouseup(function () {
+                 alert("来了");
+             }).mouseover(function () {
+                 alert("走了");
+             })*/
+
+            // 1
+            /*arr.each(function (index,ele) {
+                alert(this.innerHTML);
+                alert(index+":"+ele.innerHTML);
+            })*/
+
+            //2
+            /* $.each(arr,function (index,ele) {
+                 // alert(this.innerHTML);
+                 alert(index+":"+ele.innerHTML);
+             })*/
+
+            //3
+            /*for (ele of arr){
+                //alert(ele.innerHTML);
+                alert($(ele).html());
+            }*/
+        })
+    </script>
+</head>
+<body>
+
+<input type="button" value="我是一个按钮" id="bn">
+
+<div id="did">这是一个div</div>
+
+<ol id="liid">
+    <li>tom</li>
+    <li>jerry</li>
+    <li>zs</li>
+    <li>lisi</li>
+</ol>
+
+</body>
+</html>
