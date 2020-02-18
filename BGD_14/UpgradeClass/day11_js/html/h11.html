@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <input name="username" id="nameid"><br>
+
+    <input type="button" value="获取" onclick="getval()">
+    <input type="button" value="修改" onclick="setInnerText()">
+
+    <h1 id="hid">我是一个h1标签</h1><br>
+
+    <div id="did"><h1>我是另一个h1标签</h1></div>
+
+<script>
+
+    //修改标签的内容体
+    function setInnerText() {
+        var h = document.getElementById("hid");
+        h.innerHTML = "这是一个新的内容体";
+    }
+
+    //如何获取输入项的value值
+    function getval() {
+        var name = document.getElementById("nameid");
+        var val = name.value;
+        alert(val);
+    }
+
+    //如何获取标签的内容体
+    var arr = document.getElementsByTagName("h1");
+    //alert(arr);
+    var first = arr[0];
+    var html1 = first.innerHTML;
+    var html2 = first.innerText;
+    // alert(html1);
+    // alert(html2);
+
+    var div1 = document.getElementById("did");
+    // innerHTML获取的是标签中的字标签及其内容体
+    // innerText获取的是标签中的纯文本
+    // alert(div1.innerHTML);
+    // alert(div1.innerText);
+
+</script>
+
+</body>
+</html>

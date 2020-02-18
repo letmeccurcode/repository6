@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <span id="spanid2"></span>
+</body>
+
+<script>
+    /*
+        1 页面定义标签用来展示时间
+        2 定义函数 获取系统时间转换成指定格式的时间字符串
+        3 修改展示时间的标签对象的内容体
+        4 定义循环定时器 重复执行该函数
+     */
+    function showtime() {
+        var date = new Date();
+        var timestr = date.toLocaleString();
+        document.getElementById("spanid2").innerText = timestr;
+    }
+    setInterval(showtime,1000);
+
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    <!--  js中定义的函数大部分情况下是和事件绑定的-->
+
+    /*
+        1 没有重载
+        2 方法的调用和参数列表无关
+        3 自带arguments数组 可以实现可变参数的效果
+        4 函数对象可以使用length属性获取参数个数
+     */
+    function fun1(x, y) {
+        return x + y;
+    }
+
+    var result = fun1(10, 20);
+    // alert(result);
+
+    var fun2 = function (x, y, z) {
+    }
+    // alert(fun2.length);
+
+    // 数据类型...变量名
+
+    function fun3() {
+        var result2 = 0;
+        for (var i = 0; i < arguments.length; i++) {
+            result2 += arguments[i];
+        }
+        return result2;
+    }
+
+    var result3 = fun3(100, 200, 300);
+    // alert(result3);
+
+</script>
+</body>
+</html>

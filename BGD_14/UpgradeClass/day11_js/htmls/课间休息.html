@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            margin: 0;
+        }
+        body{
+            background: #fff;
+            text-align: center;
+			
+        }
+        .time{
+            font-size: 100px;
+            color: #000;
+            font-weight: 900;
+         
+        }
+      
+        input{
+            background: #eee;
+            border: 1px solid blue;
+            outline: none;
+
+        }
+        textarea{
+            background: #eee;
+            border: 0;
+            outline: none;
+            resize: none;
+            width: 300px;
+            height: 200px;
+            border: 1px solid blue;
+            vertical-align: top;
+        }
+      
+        .text{
+            margin-top: 50px;
+        }
+        .footer{
+            margin-top: 20px;
+       
+        }
+        .footer a{
+            display: inline-block;
+            width: 120px;
+            height: 30px;
+            background: skyblue;
+            color: #fff;
+            line-height: 30px;
+            text-decoration: none;
+            box-shadow: 2px 3px 4px #000;
+        }
+    </style>
+</head>
+
+<body background="../images/1.jpg">
+    <div class="time" id="time">
+        10:59:23
+    </div>
+    <div class="main">
+        <div class="total">
+            <span>设定休息时长</span> &nbsp;&nbsp;
+            <input type="text">
+            <span class="minute">
+                分钟
+            </span>
+        </div>
+
+    </div>
+    <div class="text">
+        <span class="left">设定显示文字（50字以内）</span>
+        <textarea></textarea>
+    </div>
+    <div class="footer">
+        <a href="javascript:;">开始课间休息</a>
+    </div>
+</body>
+<script>
+    // 获取元素
+    var time = document.getElementById("time");
+    var input = document.querySelector("input");
+    var textarea = document.querySelector("textarea");
+    var a = document.querySelector("a");
+    a.onclick = function () {
+        var value = input.value;
+        var text = textarea.value;
+        var person = { "value": value, "text": text };
+        if (value == "") {
+            alert("请设置休息的时间");
+            return false;
+        }
+        if (text.length >= 50) {
+            alert("文字超出限制");
+            return false;
+        }
+        window.sessionStorage.setItem("person", JSON.stringify(person));
+        input.value = "";
+        textarea.value = "";
+        location.href = "index2.html";
+
+    }
+    time.innerHTML = getTimer()
+    // 设置日期
+    function getTimer() {
+        var time = new Date();
+        var h = time.getHours();
+        h = h < 10 ? '0' + h : h;
+        var m = time.getMinutes();
+        m = m < 10 ? '0' + m : m;
+        var s = time.getSeconds();
+        s = s < 10 ? '0' + s : s;
+        return h + ':' + m + ':' + s;
+    }
+    // 设置定时器
+    setInterval(() => {
+        time.innerHTML = getTimer()
+    }, 1000);
+</script>
+
+</html>

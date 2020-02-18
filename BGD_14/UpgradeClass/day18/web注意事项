@@ -1,0 +1,63 @@
+1 静态资源不要放在WEB-INF目录下 否则无法直接访问到
+
+2 WEB-INF刚下存放
+       web.xml
+       classes
+       lib(必须叫lib 而且必须放在WEB-INF下)
+
+
+3 写Servlet的请求资源路径时 要以/开头
+    WebServlet("/loginservlet") 否则启动Tomcat会报错
+    Caused by: java.lang.IllegalArgumentException: Invalid <url-pattern> [as] in servlet mapping
+
+4 Servlet的请求资源路径不能重复!
+    Caused by: java.lang.IllegalArgumentException:
+    名为 [cn.itcast02.MyServlet4]和 [cn.itcast02.MyServlet5] 的servlet不能映射为一个url模式(url-pattern) [/bbb]
+
+5 写好的项目是发布在哪里的呢?
+    a: 启动Tomcat之后找到这个路径 Using CATALINA_BASE:   "C:\Users\RushB\.IntelliJIdea2019.2\system\tomcat\Tomcat_8_5_50_UpgradeClass"
+    b: C:\Users\RushB\.IntelliJIdea2019.2\system\tomcat\Tomcat_8_5_50_UpgradeClass\conf\Catalina\localhost\xxx.xml
+        xxx.xml的名字是根据我们再idea中部署项目时给它起的application context 如果我们修改了虚拟目录 那么该xml文件会被删除掉并重新一个
+    c: 打开xxx.xml文件 找到docBase 根据docBase找到实际发布的项目的位置 一般都是放在 当前project\out\artifacts目录下 是一个war包
+
+6:
+    统一资源标识符:/web/demo6  URI
+        /项目虚拟目录名称/请求资源路径                     共和国
+    统一资源定位符:http://localhost:8080/web/demo6 URL
+        协议://IP地址:端口/项目虚拟目录名称/请求资源路径    中华人民共和国
+
+7:如果表单上有下拉选择框或者多选框 在后台dopost方法中获取参数时一定要用getParameterMap这个方法
+
+8:请求转发有一个作用就是可以在不同的资源中共享数据
+
+9:  a 页面填写数据 提交给指定的Servlet
+    b 该Servlet获取到数据后封装成一个对象放入request域中
+    c 转发到指定的Servlet中
+    d 另外一个Servlet从共享的域中获取数据
+
+10:     ServletContext域的作用范围比request域要更大
+        ServletContext中存放的数据可以被多次请求获取
+        request中存放的数据只能被一次请求获取
+
+11:     在获取请求参数之前 都先调用request.setCharacterEncoding("utf-8")
+        在给页面回写数据之前 都先调用response.setContentType("text/html;charset=utf-8")
+
+12:
+    form表单的action属性  "/虚拟目录/请求资源名称"
+    请求转发             request.getRequestDispatcher("请求资源名称").forward(request,response);
+    重定向               response.sendRedirect("/虚拟目录/请求资源名称");
+    a标签的href                 "/虚拟目录/请求资源名称"
+    src
+
+13:Cookie的存放位置
+    C:\Users\xxx\AppData\Local\Google\Chrome\User Data\Default\Cookies
+
+14:如果你要跳转的那个页面需要用到你本页的参数，
+   就用转发request.getRequestDispache("目标页面").forward(request,response),反之则可以用重定向
+
+15:定义类时类名不能和现有类名重复
+
+16:
+    文件放在src下:/WEB-INF/classes/xxx
+    文件放在web下:/xxx
+    文件放在WEB-INF下:/WEB-INF/xxx

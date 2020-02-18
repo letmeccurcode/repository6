@@ -1,0 +1,8 @@
+abc dir
+    mn  dir
+        c.pdf file
+        d.txt file
+    xyz dir
+        a.txt file
+        b.jpd file
+    e.txt

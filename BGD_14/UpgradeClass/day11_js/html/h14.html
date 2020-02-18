@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form method="get" action="" onsubmit="return checkMessage();">
+<!--<form method="get" action="">-->
+    姓名:<input type="text" id="nameid" name="username"><br>
+    密码:<input type="password" id="pswdid" name="password"><br>
+
+    <input type="submit" value="提交">
+</form>
+
+<script>
+    function checkMessage() {
+        var nameval = document.getElementById("nameid").value;
+        var pswdval = document.getElementById("pswdid").value;
+        if (nameval.length >= 8 || pswdval.length >= 8) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<span id="spanid">5</span>秒钟后跳转到百度
+
+</body>
+
+<!--
+    1 在页面上定义标签显示初始时间
+    2 定义倒计时变量
+    3 定义函数 让倒计时变量自减一
+    4 判断倒计时变量是否为0
+        为0 跳转到百度页面
+        不为0 在页面上重新显示倒计时时间
+    5 定义循环定时器 每一秒钟执行一次该函数
+-->
+<script>
+    var time = 5;
+
+    function showtime() {
+        time--;
+        if (time == 0) {
+            location.href = "https://www.baidu.com";
+        }
+        document.getElementById("spanid").innerHTML = time;
+    }
+
+    setInterval(showtime, 1000);
+</script>
+</html>

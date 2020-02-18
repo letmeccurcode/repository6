@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="text" onclick="fun1()" value="aaa"><br>
+<input type="text" onclick="fun2('hello')" value="bbb"><br>
+<input type="text" onclick="fun3(this)" value="ccc"><br>
+
+<script>
+
+    // for(var i = 0;i < 100;i++){
+    //     document.write(i);
+    // }
+
+    function fun1() {
+        alert("fun1执行了");
+    }
+    function fun2(str) {
+        alert("fun2执行了:"+str);
+    }
+    function fun3(obj) {
+        alert("fun3执行了:"+obj.value);
+    }
+
+</script>
+
+</body>
+</html>

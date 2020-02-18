@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="rollImage()">
+
+<div align="center">
+    <img src="../images/1.jpg" width="800" height="500" id="imgid">
+</div>
+
+<script>
+    /*
+        1 在页面上定义标签显示图片
+        2 页面加载完毕之后创建一个循环定时器 每隔800毫秒执行一次切换图片的函数
+        3 在切换图片函数中 我们要判断index变量是否是最大值
+            是:重新赋值为1
+            否:拼接要切换的图片的路径 并且给img标签的src属性重新赋值
+
+            设计的知识点
+                1 函数的定义
+                2 事件的绑定
+                3 获取元素对象
+                4 修改元素对象的属性值
+     */
+    function rollImage() {
+        setInterval(changeImage, 800);
+    }
+
+    var index = 1;
+
+    function changeImage() {
+        index++;
+        if (index == 8) {
+            index = 1;
+        }
+        var imgsrc = "../images/" + index + ".jpg";
+        document.getElementById("imgid").src = imgsrc;
+        // "../images/1.jpg"
+        // "../images/2.jpg"
+        // "../images/3.jpg"
+        // ...
+        // "../images/7.jpg"
+    }
+
+</script>
+</body>
+</html>

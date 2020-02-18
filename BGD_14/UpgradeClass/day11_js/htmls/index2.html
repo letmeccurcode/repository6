@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        .time {
+            font-size: 100px;
+            font-weight: 900;
+
+        }
+
+        .minute {
+            font-weight: 900;
+            font-size: 50px;
+        }
+
+        .footer {
+            width: 500px;
+            height: 20px;
+            /* background: #ccc; */
+            margin: 50px auto;
+            position: relative;
+            text-align: left;
+            overflow: hidden;
+        }
+
+        .footer-text {
+            position: absolute;
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            animation: myfirst 8s linear infinite;
+        }
+
+        .footer:hover .footer-text {
+            animation-play-state: paused;
+        }
+
+
+        @keyframes myfirst {
+            0% {
+                left: 500px;
+            }
+
+            /* 10% {
+                left: -50px;
+            }
+
+
+            30% {
+                left: -100px;
+            }
+
+
+            50% {
+                left: -200px;
+            }
+
+            80% {
+                left: -300px;
+            } */
+
+            100% {
+                left: -400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="time" id="time">
+        10:59:23
+    </div>
+    <div>
+        距离上课还有 <span class="minute"> 521 </span> 分钟
+    </div>
+    <div class="footer">
+        <span class="footer-text"> 1314 </span>
+    </div>
+</body>
+<script>
+    // 获取元素
+    var time = document.getElementById("time");
+    var minute = document.querySelector(".minute");
+    var footertext = document.querySelector(".footer-text");
+    time.innerHTML = getTimer()
+    // 设置日期
+    function getTimer() {
+        var time = new Date();
+        var h = time.getHours();
+        h = h < 10 ? '0' + h : h;
+        var m = time.getMinutes();
+        m = m < 10 ? '0' + m : m;
+        var s = time.getSeconds();
+        s = s < 10 ? '0' + s : s;
+        return h + ':' + m + ':' + s;
+    }
+    // 设置定时器
+    setInterval(() => {
+        time.innerHTML = getTimer()
+    }, 1000);
+    // 获取数据
+    var gory = JSON.parse(window.sessionStorage.getItem("person"));
+
+    // 设置文字
+    var pname = gory.text;
+    footertext.innerHTML = pname;
+
+
+    var ms = gory.value * 60 * 1000;
+    var t = Date.now() + ms;
+    minute.innerHTML = countDown();
+    // 倒计时
+    var timer = setInterval(function () {
+        minute.innerHTML = countDown();
+    }, 1000);
+    function countDown() {
+        var nowTime = +new Date(); // 返回的是当前时间总的毫秒数
+        // var inputTime = +new Date(time); // 返回的是用户输入时间总的毫秒数
+        var times = (t - nowTime) / 1000; // times是剩余时间总的秒数 
+        var d = parseInt(times / 60 / 60 / 24); // 天
+        d = d < 10 ? '0' + d : d;
+        var h = parseInt(times / 60 / 60 % 24); //时
+        h = h < 10 ? '0' + h : h;
+        var m = parseInt(times / 60 % 60); // 分
+        m = m < 10 ? '0' + m : m;
+        var s = parseInt(times % 60); // 当前的秒
+        s = s < 10 ? '0' + s : s;
+        if (s < 0) {
+            clearInterval(timer);
+            return "上课辣！"
+        }
+        return m + '分' + s + '秒';
+    }
+    window.onunload = function () {
+        alert(10)
+    }
+
+
+
+
+
+
+
+</script>
+
+</html>

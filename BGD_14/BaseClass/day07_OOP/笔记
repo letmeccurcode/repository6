@@ -1,0 +1,23 @@
+面向对象 是一种编程思想 在这种思想的指导下去编程
+        Random r = new Random();
+        int num = r.nextInt();
+
+    封装
+        private
+        this
+        get/set
+        构造函数
+    继承
+        方法的重写
+        super
+        成员变量
+        成员方法
+        构造方法
+    多态
+        向上转型
+        向下转型
+
+    抽象类
+    接口
+    内部类
+    ...

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--定时器 可以在固定的事件重复做某件事的组件-->
+
+<input type="button" value="点击" onclick="startInterval();">
+
+<script>
+    //循环定时器
+    var i = 0;
+    //sid需要声明在函数之前 创建了循环定时器之后给sid赋值
+    var sid;
+
+    function fun1() {
+        i++;
+        if (i == 5) {
+            clearInterval(sid);
+        }
+        var time = new Date().toLocaleString();
+        alert(time);
+    }
+
+    function startInterval() {
+        sid = setInterval(fun1,1000);
+    }
+    //参数1 要执行哪个函数
+    //参数2 隔多久执行一次
+    // sid = setInterval(fun1,1000);
+    //取消循环定时器需要接受定时器的id
+
+    //一次性定时器
+    // var tid = setTimeout(fun1, 5000);
+    // clearTimeout(tid);
+</script>
+
+</body>
+</html>

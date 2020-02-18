@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--绑定无参方法-->
+<input type="text" id="t1" value="111" onclick="fun2()"><br>
+<!--绑定有参方法-->
+<input type="text" id="t2" value="222" onclick="fun3('helloworld!')"><br>
+<!--绑定方法并传入当前标签对象-->
+<input type="text" id="t3" value="333" onclick="fun4(this)"><br>
+
+<script>
+    function fun1() {
+        alert("fun1函数执行了");
+    }
+
+    function fun2() {
+        alert("fun2函数执行了");
+    }
+
+    function fun3(str) {
+        alert("fun3函数执行了:" + str);
+    }
+
+    function fun4(obj) {
+        alert("fun4函数执行了:" + obj.value);
+    }
+</script>
+
+</body>
+</html>

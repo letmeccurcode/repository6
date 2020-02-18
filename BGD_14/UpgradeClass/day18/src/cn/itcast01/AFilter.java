@@ -1,0 +1,24 @@
+package cn.itcast01;
+
+import javax.servlet.*;
+import javax.servlet.annotation.WebFilter;
+import java.io.IOException;
+
+@WebFilter("/*")
+public class AFilter implements Filter {
+    public void destroy() {
+        System.out.println("我被销毁了");
+
+    }
+
+    public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
+//        System.out.println("我被拦截到了");
+        chain.doFilter(req, resp);
+//        System.out.println("我被放行了");
+    }
+
+    public void init(FilterConfig config) throws ServletException {
+        System.out.println("我被创建了");
+    }
+
+}

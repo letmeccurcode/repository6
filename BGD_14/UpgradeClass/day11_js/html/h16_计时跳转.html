@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span id="spanid">5</span>秒钟之后跳转到百度
+</body>
+
+<script>
+/*
+    1 定义变量表示倒计时的时间
+    2 定义循环定时器 每一秒钟执行一次函数
+    3 该函数的作用就是用来判断倒计时时间是否为0
+        是:修改当前页面的地址
+        否:修改span标签的内容体
+
+        涉及知识点
+            循环定时器
+            获取元素对象
+            设置元素的内容体
+            修改location对象的href属性
+ */
+    var time = 5;
+
+    function changetime() {
+        time--;
+        if (time == 0) {
+            // location.href = "https://www.baidu.com";
+            location.href = "https://www.bilibili.com";
+        }
+        document.getElementById("spanid").innerText = time;
+    }
+
+    setInterval(changetime, 1000);
+
+</script>
+</html>

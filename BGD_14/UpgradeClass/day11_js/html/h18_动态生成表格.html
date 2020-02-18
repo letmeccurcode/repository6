@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div align="center">
+    行:<input type="text" id="rowid">
+    列:<input type="text" id="colid">
+    <input type="button" value="生成表格" onclick="generateTable()">
+</div>
+
+<div id="tabid" align="center" style="margin-top: 200px"></div>
+
+<script>
+    /*
+        1 定义输出框输入要生成的表格的行和列
+        2 定义函数 获取行和列的值
+        3 动态拼接表格字符串
+        4 把拼接好的表格字符串写出到页面上
+
+        设计到的知识点:
+            1 事件绑定
+            2 函数的定义
+            3 字符串的拼接
+            4 循环嵌套的使用
+            5 获取页面元素
+            6 修改标签对象的内容体
+    */
+    function generateTable() {
+        var rowval = document.getElementById("rowid").value;
+        var colval = document.getElementById("colid").value;
+
+        var tab = "<table border='1' bgcolor='#ffe4c4' cellspacing='0' cellpadding='5'>";
+
+        for (var i = 0; i < rowval; i++) {
+            tab += "<tr>";
+
+            for (var j = 0; j < colval; j++) {
+                tab += "<td>蔡徐坤</td>";
+            }
+
+            tab += "</tr>";
+        }
+
+        tab += "</table>";
+
+        // alert(tab);
+        //如果使用innerText属性的话 拼接的字符串会原样输出
+        // document.getElementById("tabid").innerText = tab;
+        document.getElementById("tabid").innerHTML = tab;
+    }
+
+</script>
+</body>
+</html>

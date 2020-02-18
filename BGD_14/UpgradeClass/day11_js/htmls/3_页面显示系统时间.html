@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<font><span id="spanid2"></span></font>
+</body>
+
+<!--
+    1 定义函数获取当前系统时间
+    2 转换成符合要求的时间字符串
+    3 将字符串显示在页面上
+    4 使用循环定时器每一秒钟执行一次该函数
+-->
+<script>
+
+    function showtimes() {
+        var d = new Date();
+        var s = d.toLocaleString();
+        document.getElementById("spanid2").innerHTML = s;
+    }
+
+    setInterval(showtimes, 1000);
+
+</script>
+</html>

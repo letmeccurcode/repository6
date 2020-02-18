@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    
+<!--    <listener>-->
+<!--        <listener-class>cn.itcast01.ListenerDemo</listener-class>-->
+<!--    </listener>-->
+    
+    <context-param>
+        <param-name>conf1</param-name>
+        <param-value>/WEb-INF/classes/db1.properties</param-value>
+    </context-param>
+    <context-param>
+        <param-name>conf2</param-name>
+        <param-value>/db2.properties</param-value>
+    </context-param>
+    <context-param>
+        <param-name>conf3</param-name>
+        <param-value>/WEb-INF/db3.properties</param-value>
+    </context-param>
+</web-app>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div align="center">
+
+    行:<input type="text" id="rowid">
+    列:<input type="text" id="colid">
+    <input type="button" value="生成" onclick="generate();">
+    <div id="did" style="margin-top: 100px"></div>
+</div>
+<script>
+
+    function generate() {
+        var rowval = document.getElementById("rowid").value;
+        var colval = document.getElementById("colid").value;
+        var tab = "<table border='1' bgcolor='#ffe4c4' cellpadding='5' cellspacing='0'>";
+
+        for (var i = 0; i < rowval; i++) {
+            tab += "<tr>";
+            for (var j = 0; j < colval; j++) {
+                tab += "<td>元素</td>";
+            }
+            tab += "</tr>";
+        }
+
+        tab += "</table>";
+
+        document.getElementById("did").innerHTML = tab;
+    }
+
+</script>
+</body>
+</html>

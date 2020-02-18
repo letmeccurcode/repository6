@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SpringDemo_01/SpringDemo_01.iml" filepath="$PROJECT_DIR$/SpringDemo_01/SpringDemo_01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringDemo_02/SpringDemo_02.iml" filepath="$PROJECT_DIR$/SpringDemo_02/SpringDemo_02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringDemo_03/SpringDemo_03.iml" filepath="$PROJECT_DIR$/SpringDemo_03/SpringDemo_03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringDemo_04/SpringDemo_04.iml" filepath="$PROJECT_DIR$/SpringDemo_04/SpringDemo_04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringDemo_05_AOP/SpringDemo_05_AOP.iml" filepath="$PROJECT_DIR$/SpringDemo_05_AOP/SpringDemo_05_AOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringDemo_06_AOP注解/SpringDemo_06_AOP注解.iml" filepath="$PROJECT_DIR$/SpringDemo_06_AOP注解/SpringDemo_06_AOP注解.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringDemo_07/SpringDemo_07.iml" filepath="$PROJECT_DIR$/SpringDemo_07/SpringDemo_07.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--元素句柄绑定-->
+<input type="button" value="点我" id="btn" onclick="fun1()">
+
+<!--DOM元素属性绑定-->
+<input type="button" value="点我" id="btn2">
+
+<script>
+
+    function fun1() {
+        alert(new Date().toLocaleString());
+    }
+
+
+    //函数的定义和事件的绑定是分开的
+    /*function fun2() {
+        alert("Hello java!");
+    }
+    //获取第二个按钮元素
+    var butn = document.getElementById("btn2");
+    butn.onclick = fun2;*/
+
+    //使用匿名函数把函数和事件糅合在一起
+
+    var butn = document.getElementById("btn2");
+    butn.onclick = function () {
+        alert("Hello world!");
+    }
+</script>
+</body>
+</html>

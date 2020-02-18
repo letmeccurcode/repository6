@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="text" value="123" id="t1"><br>
+<input type="text" value="123" id="t2"><br>
+<input type="text" value="123" id="t3"><br>
+
+<script>
+    // 方式1 定义函数对象 使用元素对象.事件属性绑定
+    // 注意 :绑定函数时 函数名称后不能加小括号 否则无法绑定成功
+    var fun1 = function () {
+        alert("fun1函数执行了!");
+    }
+    var t1 = document.getElementById("t1");
+    // alert(t1);
+    // t1.onclick = fun1();
+    t1.onclick = fun1;
+
+    <!-- 方式2 定义匿名函数 -->
+
+    var t2 = document.getElementById("t2");
+
+    t2.onclick = function () {
+        alert("fun2函数执行了!");
+    }
+
+    function fun3() {
+        alert("fun3方法执行了!");
+    }
+
+    var t3 = document.getElementById("t3");
+    // t3.onclick = fun3;
+    // t3.onclick = fun3;
+
+    // window.history
+    // history.go
+
+</script>
+
+</body>
+</html>

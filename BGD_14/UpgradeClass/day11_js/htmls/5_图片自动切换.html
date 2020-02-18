@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!--
+        思路
+            1 页面加载完毕之后执行函数 该函数会创建一个循环定时器任务
+            2 循环定时器中间隔500毫秒执行一次切换图片的函数
+            3 定义变量i 没执行一次切换函数就让该变量++
+            4 判断i是否到达最大值
+                是:就重新赋值为1
+                否:拼接图片的路径 设置给图片标签的src属性
+    -->
+</head>
+<body onload="startroll()">
+
+<div align="center">
+    <img src="../images/1.jpg" width="1000" height="600" id="imgid">
+</div>
+
+<script>
+
+    function startroll() {
+        setInterval(changeImg, 500);
+    }
+    var i = 1;
+    function changeImg() {
+        i++;
+        if (i == 8) {
+            i = 1;
+        }
+        var image = document.getElementById("imgid");
+        image.src = "../images/" + i + ".jpg";
+    }
+</script>
+
+</body>
+</html>

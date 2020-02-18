@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--为了美化xml文件-->
+<?xml-stylesheet type="text/css" href=""?>
+
+<Student>
+    <student id="1">
+        <sname>张三</sname>
+        <age>23</age>
+    </student>
+    <student id="2">
+        <sname>李四</sname>
+        <age>24</age>
+    </student>
+    <student id="3">
+        <sname>王五</sname>
+        <age>25</age>
+        <price>1000</price>
+        <color>red</color>
+        <addr>
+            <![CDATA[
+                &lt; &gt; &amp; &nbsp;
+
+                < > ==
+            ]]]>
+        </addr>
+    </student>
+
+    <!--<a><b></a></b>-->
+</Student>
