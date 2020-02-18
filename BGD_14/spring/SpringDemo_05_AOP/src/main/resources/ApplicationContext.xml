@@ -8,17 +8,27 @@
                            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <!--    目标对象-->
-    <bean id="target" class="cn.itcast.aop.Target"></bean>
+    <bean id="target" class="cn.itcast.Target"></bean>
     <!--    切面-->
-    <bean id="myAspect" class="cn.itcast.aop.MyAspect"></bean>
+    <bean id="myAspect" class="cn.itcast.MyAspect"></bean>
 
     <!--    配置织入 告诉框架 哪些方法需要哪些增强-->
     <aop:config>
         <!--        声明切面-->
         <aop:aspect ref="myAspect">
+
+            <aop:pointcut id="mine" expression="execution(* cn.itcast.aop.*.*(..))"/>
             <!--            切点+通知-->
-            <aop:before method="before" pointcut="execution(public void cn.itcast.aop.Target.save())"></aop:before>
+<!--            <aop:before method="before" pointcut="execution(public void cn.itcast.Target.save())"></aop:before>-->
+<!--            <aop:before method="before" pointcut="execution(* cn.itcast.aop.*.*(..))"></aop:before>-->
+<!--            <aop:after-returning method="after" pointcut="execution(* cn.itcast.aop.*.*(..))"></aop:after-returning>-->
+<!--            <aop:around method="around" pointcut="execution(* cn.itcast.aop.*.*(..))"></aop:around>-->
+<!--            <aop:after-throwing method="afterException" pointcut="execution(* cn.itcast.aop.*.*(..))"></aop:after-throwing>-->
+<!--            <aop:after method="after2" pointcut="execution(* cn.itcast.aop.*.*(..))"></aop:after>-->
 <!--            <aop:after method=""></aop:after>-->
+
+            <aop:before method="before" pointcut-ref="mine"></aop:before>
+            <aop:after method="after" pointcut-ref="mine"></aop:after>
         </aop:aspect>
     </aop:config>
 
