@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <filter>
+        <filter-name>af</filter-name>
+        <filter-class>cn.itcast01.AFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>af</filter-name>
+        <url-pattern>/*</url-pattern>
+        <!-- 如果访问某个具体的页面时拦截 /login.html-->
+        <!-- 所有以。html结尾的都拦截 *.html-->
+        <!-- 拦截某个具体的servlet /loginservlet -->
+    </filter-mapping>
+
+
+    <listener>
+        <listener-class>cn.itcast01.MyListener</listener-class>
+    </listener>
+
+    <context-param>
+        <param-name>db1</param-name>
+        <param-value>/WEB-INF/classes/db1.properties</param-value>
+    </context-param>
+    <context-param>
+        <param-name>db2</param-name>
+        <param-value>/db2.properties</param-value>
+    </context-param>
+    <context-param>
+        <param-name>db3</param-name>
+        <param-value>/WEB-INF/db3.properties</param-value>
+    </context-param>
+</web-app>

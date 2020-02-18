@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-3.3.1.js"></script>
+    
+    <script>
+
+        // window.onload = function(){
+        //     document.getElementById("bt1").click =function () {
+        //     }
+        // }
+        //
+        $(function () {
+
+            $("#bt1").click(function () {
+
+            })
+        })
+        
+    </script>
+</head>
+<body>
+
+    <span id="sid1">我是第一个span</span>
+    <span id="sid2">我是第二个span</span>
+
+    <input type="button" value="按钮1" onclick="fun1();">
+    <input type="button" value="按钮2" id="bt1">
+<script>
+
+    $("#bt1").click(function () {
+
+    })
+
+    document.getElementById("bt1").onclick = function () {
+
+    }
+
+    function fun1() {
+
+    }
+    var sp1 = document.getElementById("sid1");
+    // $(sp1).html("");
+    var sps = document.getElementsByTagName("span");
+
+    var sp2 = $("#sid2");
+
+    sp2[0].innerHTML = "";
+    var spanarr = $("span");
+
+    // $("#选择器名"); jquery对象
+    // var elementById = document.getElementById("sid");// js 对象
+</script>
+</body>
+</html>
